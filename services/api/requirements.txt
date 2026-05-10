@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+pydantic
+sqlalchemy
+psycopg2-binary
+python-multipart
+httpx
+python-dotenv
+slowapi
+torch
+transformers
+pinecone-client
+pillow

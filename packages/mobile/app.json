@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "SceneFinder",
+    "slug": "scenefinder",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0A0A0A"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.scenefinder.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "SceneFinder needs camera access to capture screenshots of movies and TV shows for instant scene identification.",
+        "NSPhotoLibraryUsageDescription": "SceneFinder needs photo library access to select screenshots for scene identification."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0A0A0A"
+      },
+      "package": "com.scenefinder.app",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "apiUrl": "https://api.scenefinder.app/v1"
+    }
+  }
+}
