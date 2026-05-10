@@ -1,0 +1,29 @@
+name: Backend CI
+
+on:
+  push:
+    paths:
+      - 'services/api/**'
+  pull_request:
+    paths:
+      - 'services/api/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          cd services/api
+          pip install -r requirements.txt
+      - name: Lint
+        run: pip install flake8 && flake8 services/api --count --select=E9,F63,F7,F82 --show-source --statistics
+      - name: Test
+        run: |
+          cd services/api
+          pip install pytest
+          pytest test_main.py -v
